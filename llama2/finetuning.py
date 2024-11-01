@@ -20,6 +20,7 @@ from transformers import (
     LlamaConfig,
     default_data_collator,
 )
+from torch.distributed.elastic.multiprocessing.errors import record
 from transformers.models.llama.modeling_llama import LlamaDecoderLayer
 
 import policies
@@ -44,7 +45,7 @@ from utils.train_utils import (
     get_policies
 )
 
-
+@record
 def main(**kwargs):
     # Update the configuration for the training and sharding process
     update_config((train_config, fsdp_config), **kwargs)
