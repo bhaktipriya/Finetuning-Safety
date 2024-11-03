@@ -14,3 +14,8 @@ optimum
 numpy==1.26.4
 git+https://github.com/huggingface/peft.git@v0.9.0
 protobuf
+scikit-learn
+transformer_lens
+colorama
+circuitsvis
+plotly
